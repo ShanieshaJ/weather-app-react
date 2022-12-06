@@ -20,7 +20,7 @@ export default function App() {
           </a>
           and hosted on{" "}
           <a
-            href="https://stalwart-chebakia-f48e45.netlify.app/"
+            href="https://rad-shortbread-6bea65.netlify.app/"
             target="_blank"
             className="projectLink"
             rel="noopener noreferrer"
