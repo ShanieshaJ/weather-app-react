@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./App.css";
+import WeatherForm from "./WeatherForm";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WeatherForm defaultCity="Laflèche" />
+      <footer className="signature">
+        <small>
+          This project is{" "}
+          <a
+            href="https://github.com/ShanieshaJ/peri-weather-app-react"
+            target="_blank"
+            className="projectLink"
+            rel="noopener noreferrer"
+          >
+            open-source code on Github{" "}
+          </a>
+          and hosted on{" "}
+          <a
+            href="https://stalwart-chebakia-f48e45.netlify.app/"
+            target="_blank"
+            className="projectLink"
+            rel="noopener noreferrer"
+          >
+            Netlify{" "}
+          </a>
+          by Shaniesha John
+        </small>
+      </footer>
     </div>
   );
 }
 
-export default App;
+const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+rootElement.render(<App />);

@@ -1,0 +1,51 @@
+.CurrentWeatherData .current-weather-container {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+li {
+  margin: 0 auto;
+  list-style: none;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.current-weather-temperature img {
+  display: inline-block;
+  margin-right: 5px;
+  height: 64px;
+  vertical-align: text-bottom;
+}
+
+.current-weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.current-weather-temperature .units {
+  position: relative;
+  padding: 5px;
+  font-size: 16px;
+  top: -34px;
+}
+
+.current-weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+#celsius,
+#fahrenheit {
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  position: relative;
+}

@@ -1,0 +1,15 @@
+button.btn.btn-primary.pull-right {
+  border: 2px double #dadde1;
+  background-color: #ff8f51;
+  left: 1rem;
+  text-align: center;
+  margin: 1px;
+}
+
+.WeatherForm {
+  box-shadow: 2px 2px 5px #460540;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+  padding: 20px 16px 24px 16px;
+  background: #e6e3f8;
+}
