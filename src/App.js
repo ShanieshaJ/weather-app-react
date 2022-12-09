@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import "./App.css";
 import WeatherForm from "./WeatherForm";
 
@@ -34,5 +34,5 @@ export default function App() {
   );
 }
 
-const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = createRoot(document.getElementById("root"));
 rootElement.render(<App />);
