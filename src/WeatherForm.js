@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ReactAnimatedWeather from "react-animated-weather/build/ReactAnimatedWeather";
 import "./WeatherForm.css";
 import CurrentData from "./CurrentData";
 import CurrentWeatherData from "./CurrentWeatherData";
+import WeatherForecast from "./WeatherForecast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationCrosshairs,
@@ -17,20 +17,20 @@ export default function WeatherForm(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      coordinates: response.data.coord,
-      temperature: Math.round(response.data.main.temp),
-      city: response.data.name,
+      coordinates: response.data.coordinates,
+      temperature: Math.round(response.data.temperature.current),
+      city: response.data.city,
       wind: Math.round(response.data.wind.speed),
-      date: new Date(response.data.dt * 1000),
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon,
+      date: new Date(response.data.time * 1000),
+      humidity: response.data.temperature.humidity,
+      description: response.data.condition.description,
+      iconURL: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
 
   function searchCity() {
-    let apiKey = "4bac3c024fa4c6ee606313b5c8da3127";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiKey = "34c07bt895o4bb1e093cad279ab94f19";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -42,12 +42,6 @@ export default function WeatherForm(props) {
   function handleUpdateCity(event) {
     setCity(event.target.value);
   }
-
-  /* function handleApiLocation(position) {
-    let apiKey = "4bac3c024fa4c6ee606313b5c8da3127";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  } */
 
   if (weatherData.ready) {
     return (
@@ -81,6 +75,7 @@ export default function WeatherForm(props) {
         </form>
         <CurrentData data={weatherData} />
         <CurrentWeatherData data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
@@ -88,12 +83,6 @@ export default function WeatherForm(props) {
     return (
       <section className="LoadingIcon">
         <p>Loading, please wait...</p>
-        <ReactAnimatedWeather
-          icon="PARTLY_CLOUDY_NIGHT"
-          color="rgb(247, 206, 230)"
-          size={50}
-          animate={true}
-        />
       </section>
     );
   }
