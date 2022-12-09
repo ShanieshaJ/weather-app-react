@@ -1,5 +1,4 @@
 import React from "react";
-import WeatherIcons from "./WeatherIcons";
 import "./CurrentWeatherData.css";
 
 export default function CurrentWeatherData(props) {
@@ -9,10 +8,9 @@ export default function CurrentWeatherData(props) {
         <div className="row">
           <div className="col-6">
             <div className="clearfix current-weather-temperature">
-              <WeatherIcons
-                code={props.data.icon}
-                size={50}
-                id="icon"
+              <img
+                src={props.data.iconURL}
+                alt={props.data.description}
                 className="float-left"
               />{" "}
               <strong>{props.data.temperature}</strong>
@@ -35,7 +33,6 @@ export default function CurrentWeatherData(props) {
             </ul>
           </div>
         </div>
-        <div className="weather-forecast" id="forecast"></div>
       </div>
     </div>
   );
