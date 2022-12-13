@@ -2,7 +2,7 @@
   font-family: "Poppins", "Montserrat", sans-serif;
   margin: 30px auto;
   max-width: 700px;
-  color: black;
+  color: #3c3549;
 }
 
 body {
@@ -20,5 +20,9 @@ body {
 
 .projectLink {
   text-decoration: none;
-  color: #dbddf2;
+  color: #d7c7e1;
+}
+
+small {
+  color: #c6c0d2;
 }
