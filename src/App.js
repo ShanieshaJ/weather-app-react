@@ -6,7 +6,7 @@ import WeatherForm from "./WeatherForm";
 export default function App() {
   return (
     <div className="App">
-      <WeatherForm defaultCity="Laflèche" />
+      <WeatherForm defaultCity="Longueuil" />
       <footer className="signature">
         <small>
           This project is{" "}
