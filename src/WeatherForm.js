@@ -43,6 +43,18 @@ export default function WeatherForm(props) {
     setCity(event.target.value);
   }
 
+  function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiKey = "34c07bt895o4bb1e093cad279ab94f19";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getGeoLocation() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherForm">
@@ -67,6 +79,7 @@ export default function WeatherForm(props) {
                 type="button"
                 className="btn btn-primary pull-right"
                 id="current-location"
+                onClick={getGeoLocation}
               >
                 <FontAwesomeIcon icon={faLocationCrosshairs} />
               </button>
