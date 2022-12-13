@@ -15,10 +15,6 @@ li {
   list-style: none;
 }
 
-li::first-letter {
-  text-transform: capitalize;
-}
-
 .current-weather-temperature img {
   display: inline-block;
   margin-right: 5px;
@@ -47,8 +43,7 @@ li::first-letter {
   cursor: default;
 }
 
-#celsius,
-#fahrenheit {
+#celsius {
   color: rgb(33, 33, 33);
   text-decoration: none;
   position: relative;
