@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.WeatherForecast .forecastTitle {
+  text-align: left;
+  margin: 0.7rem;
+  font-size: 1.2rem;
+  color: rgb(129, 114, 222);
+}
+
 .WeatherForecast-temperature-min {
   opacity: 0.7;
   margin-left: 5px;
