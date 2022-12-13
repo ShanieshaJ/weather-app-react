@@ -9,22 +9,26 @@ ul {
 }
 
 li {
+  position: relative;
+  bottom: -15px;
   margin: 0 auto;
   list-style: none;
 }
 
-li:first-letter {
+li::first-letter {
   text-transform: capitalize;
 }
 
 .current-weather-temperature img {
   display: inline-block;
   margin-right: 5px;
-  height: 64px;
+  height: 100px;
   vertical-align: text-bottom;
 }
 
 .current-weather-temperature strong {
+  position: relative;
+  top: -15px;
   color: rgb(33, 33, 33);
   font-size: 64px;
   line-height: 1;
@@ -35,7 +39,7 @@ li:first-letter {
   position: relative;
   padding: 5px;
   font-size: 16px;
-  top: -34px;
+  top: -50px;
 }
 
 .current-weather-temperature .active {
