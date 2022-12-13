@@ -18,16 +18,14 @@ export default function CurrentWeatherData(props) {
                 <a href="/" id="celsius">
                   °C
                 </a>{" "}
-                |{" "}
-                <a href="/" id="fahrenheit">
-                  °F
-                </a>
               </span>
             </div>
           </div>
           <div className="col-6">
             <ul>
-              <li>Description: {props.data.description}</li>
+              <li className="text-capitalize">
+                Description: {props.data.description}
+              </li>
               <li>Humidity: {props.data.humidity}%</li>
               <li>Wind: {props.data.wind} km/h</li>
             </ul>
